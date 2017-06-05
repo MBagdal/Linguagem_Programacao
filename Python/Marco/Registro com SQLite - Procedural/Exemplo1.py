@@ -47,7 +47,7 @@ def BuscarCliente(keyWord):
 	else:
 		
 		print("Nome do Cliente: ", dados[1] ," - Tipo do Ingresso: ", dados[2] ," - Valor do Ingresso: ", str(dados[3]) ," - Data da Reserva: ", str(dados[4]))	
-			
+		return False		
 
 
 def DeletarCliente(nome_cliente):
@@ -56,14 +56,28 @@ def DeletarCliente(nome_cliente):
 	connection.commit()
 	print('Usuario {} Deletado com sucesso'.format(nome_cliente))
 
+def ReadAll():
+
+		sql = 'SELECT * FROM Clientes '
+		cursor.execute(sql)
+		
+		dados = cursor.fetchall()
+		if len(dados) == 0:
+			print('Ainda nao temos usuarios cadastrado no sistema.')
+		else:
+			for info in dados:
+				print("Nome do Cliente: ", info[1] ," - Tipo do Ingresso: ", info[2] ," - Valor do Ingresso: ", info[3] ," - Data da Reserva: ", info[4])
 while True:
 	CreateTable()
-	opc = int(input('Digite 1 - Cadastrar, 2 - Excluir, 3 - Procurar Cliente no sistema: '))
+	opc = int(input('Digite 1 - Cadastrar, 2 - Excluir, 3 - Procurar Cliente no sistema:  - 4 - Buscar todos os clientes '))
 	if opc == 1:
 		CadastrarCliente()
 	elif opc == 2:
 		deletar = input('Digite o nome do cliente para deletar: ')
 		DeletarCliente(deletar)	
 	elif opc == 3:
-		buscar = input('Digite Nome do cliente, ou tipo de Ingresso ou seu Valor: ')
-		BuscarCliente(buscar)
+		while True:
+			buscar = input('Digite Nome do cliente, ou tipo de Ingresso ou seu Valor: ')
+			BuscarCliente(buscar)
+	elif opc == 4:
+			ReadAll()		
