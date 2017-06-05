@@ -1,8 +1,8 @@
 import sqlite3
 import time
 
-conexao = sqlite3.connection('ExemplosPython.db')
-cursor. = conexao.cursor()
+connection = sqlite3.connect('ExemplosPython.db')
+cursor = connection.cursor()
 
 class Cadastro:
 
@@ -43,12 +43,12 @@ class Cadastro:
 		if len(dados) == 0:
 			print('Usuario não encontrado em nosso sistema.')
 		else:
-			
-			print("Nome do Cliente: ", dados[1] ," - Tipo do Ingresso: ", dados[2] ," - Valor do Ingresso: ", dados[3] ," - Data da Reserva: ", dados[4])
+			for info in dados:
+				print("Nome do Cliente: ", dados[1] ," - Tipo do Ingresso: ", dados[2] ," - Valor do Ingresso: ", dados[3] ," - Data da Reserva: ", dados[4])
 
 	def Update():
-
-	def Delete():
+		sql = 'SELECT * FROM Clientes '
+	def Delete(nome_cliente):
 
 		sql = 'DELETE FROM Clientes WHERE Clientes.nome_cliente = ?'
 		cursor.execute(sql,(nome_cliente,))
