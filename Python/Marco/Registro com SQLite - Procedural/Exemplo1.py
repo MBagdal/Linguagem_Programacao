@@ -16,7 +16,7 @@ def InsertData(id,nome_cliente, tipo_ingresso,Valor_ingresso, data_compra):
 
 def CadastrarCliente():
 	i = 0
-	date = time.strftime("%H:%M:%S")
+	date = time.strftime("%d-%m-%y")
 	while True:
 		nome_cliente = input('Digite o nome do cliente: ... s para voltar ao menu principal: ')
 		if nome_cliente == 's':
