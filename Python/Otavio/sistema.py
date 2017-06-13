@@ -1,3 +1,22 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Marketplace
+Gist
+ @MBagdal
+ Sign out
+ Unwatch 2
+  Star 0
+  Fork 1 MBagdal/AulasPython
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Settings Insights 
+Branch: master Find file Copy pathAulasPython/Otavio/sistema.py
+8fa0382  9 days ago
+@oNascimento oNascimento Meus Arquivos_BD
+1 contributor
+RawBlameHistory     
+59 lines (46 sloc)  1.3 KB
 import sqlite3
 import time
 
@@ -57,3 +76,5 @@ c = Cliente('Otavio',21,1231,'ksdafh',14123123,'Medianeira','PR')
 c.Cria_Tabela()
 c.Cadastrar_Cliente()
 c.Mostrar_Cliente()
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help
