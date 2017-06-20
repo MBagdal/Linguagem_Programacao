@@ -7,8 +7,9 @@ $('div.click').on({
       	
       		$(".click").css("background-color", "#fff");
         	$("p").css("color", "#000");
-      		$(this).css('background-color','#39f');  
+        	$(this).css('background-color','#39f');  
         	$(this).find("p").css("color", "#fff");
+        	$(this).find("p").addClass('folder_clicked');
         	name_folder = $(this).find("p").text();
         
       break;

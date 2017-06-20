@@ -13,6 +13,26 @@ body{
   box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
 }
 
+.click > p{
+  text-align: center;
+}
+
+.click > p::before {
+    content: url(icons/folder_black.svg);
+    vertical-align: -50%;
+
+}
+
+.folder_clicked:before{
+    content: url(icons/folder_white.svg);
+    vertical-align: -50%;  
+}
+
+.folder_selected::before{
+    content: url(icons/folder_white.svg);
+    vertical-align: -50%;  
+}
+
 .menu{
   width: 150px;
   border-radius: 3px;
