@@ -67,7 +67,9 @@ var Menu = function(event){
 		       menu.show();
 }
 
-
+$('.menu li').on('click',function(){
+	alert("Voce Cliou em " + $(this).html() + " da pasta " + name_folder);
+});
   
 $("html").on("click", function(event){
 		var target = $( event.target );
@@ -76,11 +78,4 @@ $("html").on("click", function(event){
 			$(".click").css("background-color", "#fff");
         	$("p").css("color", "#000");	
   		}
-		// if($(".menu").is(':visible') ){
-			
-		// }
-
-
-		
-
 });
