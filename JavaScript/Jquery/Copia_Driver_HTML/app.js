@@ -67,14 +67,11 @@ var Menu = function(event){
 		       menu.show();
 }
 
-$(".menu li").click(function(){
-    var operacao = $(this).html();
-    alert("Voce Irar " + operacao + " a pasta " + name_folder);
-  });
+
   
 $("html").on("click", function(event){
 		var target = $( event.target );
-		if(!target.is( ".click") && !target.is( ".click > p")) {
+		if(!target.is( ".click") && !target.is( ".click > p") && !target.is(".menu li")) {
     		$(".menu").hide();
 			$(".click").css("background-color", "#fff");
         	$("p").css("color", "#000");	
