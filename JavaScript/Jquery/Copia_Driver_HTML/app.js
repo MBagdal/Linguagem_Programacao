@@ -1,23 +1,24 @@
 var name_folder;
-$('.click').on({
+$('div.click').on({
 	mousedown: function(event){
+	event.stopPropagation();
   	switch(event.which){
   		case 1:
       	
-      	$(".click").css("background-color", "#fff");
-        $("p").css("color", "#000");
-      	$(this).css('background-color','#39f');  
-        $(this).find("p").css("color", "#fff");
-        name_folder = $(this).find("p").text();
+      		$(".click").css("background-color", "#fff");
+        	$("p").css("color", "#000");
+      		$(this).css('background-color','#39f');  
+        	$(this).find("p").css("color", "#fff");
+        	name_folder = $(this).find("p").text();
         
       break;
      case 3:
      		$(".click").css("background-color", "#fff");
-        $("p").css("color", "#000");
-      	$(this).css('background-color','#39f');  
-        $(this).find("p").css("color", "#fff");
-        $(".menu").find("p").text("Menu " + $(this).find("p").html()).css({'color':'#000', 'padding': '10px'});
-        name_folder = $(this).find("p").text();
+        	$("p").css("color", "#000");
+      		$(this).css('background-color','#39f');  
+        	$(this).find("p").css("color", "#fff");
+        	$(".menu").find("p").text("Menu " + $(this).find("p").html()).css({'color':'#000', 'padding': '10px'});
+        	name_folder = $(this).find("p").text();
         break;   
      default:
       	$("#result").html("Que mouse e esse fera?");
@@ -25,13 +26,15 @@ $('.click').on({
 	},
   contextmenu: function(event){
   	event.preventDefault();
-  	Menu();
+  	event.stopPropagation();
+  	Menu(event);
   }
 });
 	
 	
-var Menu = function(){
-					var menu = $(".menu"); 
+var Menu = function(event){
+					
+			   var menu = $(".menu"); 
 
 		       //hide menu if already shown
 		       menu.hide(); 
@@ -69,6 +72,18 @@ $(".menu li").click(function(){
     alert("Voce Irar " + operacao + " a pasta " + name_folder);
   });
   
-$("html").on("click", function(){
-			$(".menu").hide();
+$("html").on("click", function(event){
+		var target = $( event.target );
+		if(!target.is( ".click") && !target.is( ".click > p")) {
+    		$(".menu").hide();
+			$(".click").css("background-color", "#fff");
+        	$("p").css("color", "#000");	
+  		}
+		// if($(".menu").is(':visible') ){
+			
+		// }
+
+
+		
+
 });
